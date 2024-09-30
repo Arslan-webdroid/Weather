@@ -1,37 +1,56 @@
-# Weather App
 
-## Overview
-This is a simple weather app that allows users to input a zip code and view the current weather based on AccuWeather's "1 Day of Daily Forecasts" API.
-Users can also save favorite zip codes and quickly retrieve the weather for saved zip codes.
+# Weather App Project
+
+This project is a weather application that fetches current weather data using the AccuWeather API based on zip codes provided by the user. Users can also save their favorite zip codes for quick access.
 
 ## Features
-- Input a zip code to view the weather.
-- Save favorite zip codes for quick access.
-- Loading indicator while fetching weather data.
-- Display key weather information: temperature, condition, and weather icon.
+- Fetch weather data for a given zip code.
+- Display temperature, weather conditions, and an icon.
+- Save favorite zip codes for future use.
+- Responsive design with a clean and eye-catching user interface.
 
-## How to Set Up
-1. **Obtain an API Key**:
-   - Create an account on AccuWeather and generate an API key.
-   - Replace the placeholder API key in the script (`const apiKey = 'YOUR_API_KEY';`) with your actual API key.
+## Setup Instructions
 
-2. **Run the App**:
-   - Open the `weather.html` file in any browser.
-   - Input a valid zip code and click **Get Weather** to view the weather for that location.
-   - Click **Save Zip Code** to save favorite zip codes.
+### 1. Clone the Repository
+You can clone this project to your local machine by running the following command:
+```bash
+git clone https://github.com/Arslan-webdroid/Weather.git
+```
 
-3. **Access Saved Zip Codes**:
-   - Saved zip codes will appear under the "Your Favorite Zip Codes" section. Click on any saved zip code to view its weather details.
+### 2. API Key Setup
+You will need an **AccuWeather API** key to fetch the weather data. Follow these steps to get started:
+- Sign up at [AccuWeather Developer](https://developer.accuweather.com/) and get your API key.
+- Open the `weather.js` file and locate the following line:
 
-## Design Choices
-- The app uses a minimalist design to keep the UI clean and simple.
-- Used `localStorage` to persist favorite zip codes for convenience.
-- Implemented error handling for failed API requests and invalid zip codes.
+```javascript
+const apiKey = 'YOUR_API_KEY_HERE';
+```
 
-## Requirements
-- A modern browser with support for ES6 JavaScript.
-- AccuWeather API key.
+- Replace `'YOUR_API_KEY_HERE'` with your actual API key.
 
-## Bonus Features
-- Save favorite zip codes.
-- Loading indicator during data fetch.
+### 3. Install Dependencies (if any)
+For this project, no additional dependencies are required. Simply ensure that your browser supports modern JavaScript (ES6+) and fetch API.
+
+### 4. Run the Project
+- Open the `weather.html` file in your browser, and you should be able to use the weather app locally.
+- You can also deploy it on a live server like GitHub Pages or Netlify for broader access.
+
+## Notable Design and Development Choices
+1. **UI Design:**
+   - The app has a modern and clean user interface with responsive design.
+   - Subtle hover effects and a shadowed container improve user interaction.
+   - The design ensures easy use on both desktop and mobile devices.
+   
+2. **Development Decisions:**
+   - I’ve structured the code to be as modular as possible. The `getWeather`, `fetchLocationKey`, and `fetchWeather` functions handle API requests and display logic cleanly.
+   - Error handling is in place to alert users if a zip code is invalid or if there’s an API error (e.g., CORS or exceeding rate limits).
+   - LocalStorage is used for saving favorite zip codes, allowing users to retrieve them later without making repeated API calls.
+
+## How to Use
+1. Enter a valid zip code in the input field.
+2. Click the **Get Weather** button to retrieve weather data.
+3. To save the zip code, click **Save Zip Code** and it will be stored in the favorites section.
+4. You can click on any favorite zip code to quickly retrieve the weather for that location.
+
+## Repository Link
+Here is the GitHub repository link: [Weather App Repository](https://github.com/Arslan-webdroid/Weather.git)
